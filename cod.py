@@ -46,7 +46,7 @@ def get_ups():
 
 
 def main():
-    uvicorn.run("cod:app", host="127.0.0.1", port=18000)
+    uvicorn.run("cod:app", host="0.0.0.0", port=18000)
 
 
 if __name__ == "__main__":
