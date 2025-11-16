@@ -17,7 +17,7 @@ def home():
 def get_ups():
     try:
         result = subprocess.run(
-            ["upsc", "salicru@127.0.0.1:3493"],
+            ["upsc", "salicru@host.docker.internal:3493"],
             capture_output=True,
             text=True
         )
