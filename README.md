@@ -12,17 +12,23 @@ El proyecto incluye un **Dockerfile**, por lo que puede ejecutarse fácilmente e
 
 docker build -t dashboard-ups .
 
-    Ejecutar el contenedor:
+Ejecutar el contenedor:
 
-sudo docker run --rm --network=host --name fastups_container fastups
+Nota: Esta version usa:
+    extra_hosts:
+    - "host.docker.internal:host-gateway"
+Para poder interactuar con localhost y hacerle las consultas del estado a upsc.
 
-Nota: Es necesario usar --network host para que la aplicación pueda acceder al puerto que expone el SAI en el PC.
+Si se quiere probar en localhost, hay que exponer el puerto 18000 (-p 18000:18000).
 
 Acceder desde el navegador:
 
-http://localhost:18000/
+http://localhost:18000/ups 
 
 El dashboard se actualizará automáticamente cada 2 segundos mostrando los datos del SAI.
+
+Si se quiere ver directamente la informacion recibida por upsc se puede consultar usando /ups/raw en la url.
+
 Configuración del SAI
 
 Para configurar el sistema se puede tomar esta guía de ejemplo: 
