@@ -152,7 +152,7 @@
 
     <script>
         async function fetchUPS() {
-            const res = await fetch("/ups");
+            const res = await fetch("/ups/raw");
             const data = await res.json();
 
             // Principales
