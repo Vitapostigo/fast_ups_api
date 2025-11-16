@@ -9,6 +9,7 @@ app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.get("/ups")
+@app.get("/ups/")
 def home():
     return FileResponse("static/index.html")
 
