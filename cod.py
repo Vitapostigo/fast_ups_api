@@ -8,12 +8,12 @@ app = FastAPI()
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
-@app.get("/")
+@app.get("/ups")
 def home():
     return FileResponse("static/index.html")
 
 
-@app.get("/ups")
+@app.get("/ups/raw")
 def get_ups():
     try:
         result = subprocess.run(
